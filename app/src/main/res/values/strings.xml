@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">BBiology</string>
+    <string name="company_name">Una simple empresa chida</string>
+    <string name="btnAceptDefault">Aceptar</string>
+    <string name="btnCancelDefault">Cancelar</string>
+    <string name="alertOk">Se ha añadido el usuario</string>
+    <string name="alertError">Ha ocurrido un error</string>
+    <string name="lblSi">Si</string>
+    <string name="lblNo">No</string>
+
+    <!-- Pantalla principal -->
+    <string name="btnEntrar">Entrar</string>
+
+    <!-- Pantalla Inicio de sesion -->
+    <string name="btnConsult">Consultar</string>
+    <string name="btnLogin">Iniciar sesion</string>
+    <string name="btnRegistrar">Registrarse</string>
+
+    <!-- Pantalla de Registro -->
+    <string name="lblRegistro">Registro de usuarios</string>
+    <string name="lblProf">Iniciales del Profesor</string>
+    <string name="lblMatricula">Matricula</string>
+    <string name="lblNombre">Nombre</string>
+    <string name="lblApellido">Apellidos</string>
+    <string name="lblEmail">Email</string>
+    <string name="lblTurno">Turno</string>
+    <string name="lblPwd">Contraseña</string>
+
+    <string name="htPwd">**********</string>
+    <string name="htMat">2020630002</string>
+    <string name="htProf">M.T.V.Z</string>
+    <string name="htNombre">Daniela</string>
+    <string name="htApellidos">Vazquez</string>
+    <string name="htEmail">usuario@hotmail.com</string>
+    <string-array name="Turnos">
+        <item>Matutino</item>
+        <item>Vespertino</item>
+    </string-array>
+
+    <!-- Pantalla de Login -->
+    <string name="lblLogin">Inicio de sesion</string>
+    <string name="lblHeader">Bienvenido Profesor Laboratorio</string>
+    <string name="lblMatEmail">Matricula/Email</string>
+
+    <!-- Pantalla de Profesor -->
+    <string name="lblProfesor">Pantalla de profesor</string>
+    <string name="lblWelcome">Bienvenido profesor %s</string>
+    <string name="lblHorario">Seleccione el horario: </string>
+    <string name="lblPractStatus">¿Hubo practica?</string>
+    <string-array name="spHorasMat">
+        <item>7:00 - 9:00</item>
+        <item>9:00 - 11:00</item>
+        <item>11:00 - 13:00</item>
+        <item>13:00 - 15:00</item>
+    </string-array>
+    <string-array name="spHorasVesp">
+        <item>14:00 - 16:00</item>
+        <item>16:00 - 18:00</item>
+        <item>18:00 - 20:00</item>
+        <item>20:00 - 22:00</item>
+    </string-array>
+    <string name="lblDia">Dia de la practica:</string>
+    <string name="lblMuestras">Muestras Fijas</string>
+    <string name="lblMateriales">Materiales Completos</string>
+    <string name="lblPuntualidadA">Puntualidad Asistente</string>
+    <string name="lblPuntualidadP">Puntualidad Profesor</string>
+    <string name="lblPuntualidadAlumno">Puntualidad Alumno</string>
+    <string name="lblManualCompleto">Manual Completo</string>
+    <string name="lblBata">Bata</string>
+    <string name="lblAsistAux">Asistió auxiliar:</string>
+    <string name="lblAsistServ">Asistió chico servicio:</string>
+    <string name="lblPractSel">Practica realizada:</string>
+    <string name="btnSave">Guardar registro</string>
+    <string name="btnPrev">Previsualizar</string>
+    <string name="headerDocuments">Visor de documentos</string>
+    <string name="headerConsultas">Registro de practicas</string>
+
+
+</resources>

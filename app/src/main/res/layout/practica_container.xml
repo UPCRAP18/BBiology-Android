@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnShowInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/round_button_white_blue"
+        android:textSize="18sp"
+        tools:text="Practica: ss/ss/ss 00:00 -- 00:00" />
+
+    <LinearLayout
+        android:id="@+id/InfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp">
+
+            <TextView
+                android:id="@+id/lblAsistAux"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="Asistió auxiliar: Si/No" />
+
+            <TextView
+                android:id="@+id/lblAsistServ"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="Asistió chico de servicio: Si/No" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp">
+
+            <TextView
+                android:id="@+id/lblMFijas"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="Muestras Fijas: Si/No" />
+
+            <TextView
+                android:id="@+id/lblBata"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="Bata: Si/No" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp">
+
+            <TextView
+                android:id="@+id/lblMatComp"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="Materiales completos: Si/No" />
+
+            <TextView
+                android:id="@+id/lblPuntAlumno"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="Puntualidad alumno: Si/No" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp">
+
+            <TextView
+                android:id="@+id/lblPuntProf"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="Puntualidad profesor: Si/No" />
+
+            <TextView
+                android:id="@+id/lblManual"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="Manual completo: Si/No" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lblPractica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp"
+            tools:text="Practica realizada: Practica 2" />
+
+    </LinearLayout>
+
+</LinearLayout>
