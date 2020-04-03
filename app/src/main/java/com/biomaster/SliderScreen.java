@@ -39,6 +39,15 @@ public class SliderScreen extends AppCompatActivity {
         Button btnConsultar = findViewById(R.id.btnConsultar);
         Button btnLogin = findViewById(R.id.btnLogin);
         Button btnRegister = findViewById(R.id.btnRegister);
+        Button btnInfo = findViewById(R.id.btnInfo);
+
+        btnInfo.setOnClickListener(v -> {
+            LayoutInflater li = LayoutInflater.from(SliderScreen.this);
+            View info = li.inflate(R.layout.info, null);
+            AlertDialog.Builder builder = new AlertDialog.Builder(SliderScreen.this);
+            builder.setView(info);
+            builder.create().show();
+        });
 
         btnLogin.setOnClickListener(v-> {
             Intent sendLogin = new Intent(SliderScreen.this, Login.class);

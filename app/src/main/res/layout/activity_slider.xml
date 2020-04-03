@@ -17,6 +17,14 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
+        android:id="@+id/btnInfo"
+        android:layout_width="220dp"
+        android:layout_height="48dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/round_button"
+        android:text="@string/lblAcerca" />
+
+    <Button
         android:id="@+id/btnConsultar"
         android:layout_width="220dp"
         android:layout_height="48dp"

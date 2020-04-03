@@ -74,6 +74,16 @@
     <string name="btnPrev">Previsualizar</string>
     <string name="headerDocuments">Visor de documentos</string>
     <string name="headerConsultas">Registro de practicas</string>
+    <string name="lblAcerca">Acerca de los autores</string>
+
+    <string name="lblCredits">Autores:</string>
+    <string name="lblAutores">
+        PARADA DIAZ ANGEL DAVID\n
+        RUIZ MENDIETA MARIA FERNANDA\n
+        TRINIDAD LOPEZ ARLETTE ESMERALDA\n
+        VAZQUEZ HERNANDEZ DULCE DANIELA\n
+        VENTURA VERGARA KAREN ALEXANDRA
+    </string>
 
 
 </resources>
