@@ -51,8 +51,10 @@ delete from usuario where ID = "2020630001";
 
 select * from app;
 
-select *,
-    IFNULL((Select Nombre from practicas where ID=app.Practica_Realizar), "") as Practica,
-    IFNULL((Select Practica from practicas where ID=app.Practica_Realizar), "") as Ruta
-    from app 
-    WHERE ID_Prof = "2020630002";
+SELECT *,
+	IFNULL((Select Nombre from practicas where ID=app.Practica_Realizar), "") as Practica,
+    IFNULL((Select Practica from practicas where ID=app.Practica_Realizar), "") as Ruta,
+    IFNULL((Select Nombre from usuario where ID = app.ID_Prof), "") as Profesor
+    from app;
+
+select * from usuario;

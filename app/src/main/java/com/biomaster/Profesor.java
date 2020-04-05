@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -103,7 +104,7 @@ public class Profesor extends AppCompatActivity {
         txtWelcome.setText(getResources().getString(R.string.lblWelcome, usr.getNombre()));
 
         Button btnPrev = findViewById(R.id.btnPrev);
-        Button btnAddReg = findViewById(R.id.btnSaveConfig);
+        ImageButton btnAddReg = findViewById(R.id.btnSaveConfig);
 
         setHorarioSpinner();
         setPractSpinner();

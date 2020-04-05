@@ -42,11 +42,12 @@ public class SliderScreen extends AppCompatActivity {
         Button btnInfo = findViewById(R.id.btnInfo);
 
         btnInfo.setOnClickListener(v -> {
-            LayoutInflater li = LayoutInflater.from(SliderScreen.this);
-            View info = li.inflate(R.layout.info, null);
-            AlertDialog.Builder builder = new AlertDialog.Builder(SliderScreen.this);
-            builder.setView(info);
-            builder.create().show();
+            LayoutInflater inflater = getLayoutInflater();
+            Toast acercade = new Toast(getApplicationContext());
+            View message = inflater.inflate(R.layout.info, null);
+            acercade.setDuration(Toast.LENGTH_LONG);
+            acercade.setView(message);
+            acercade.show();
         });
 
         btnLogin.setOnClickListener(v-> {
@@ -84,35 +85,10 @@ public class SliderScreen extends AppCompatActivity {
 
         btnLogin.setOnClickListener(v -> {
             if(txtUsr.getText().length() > 0 && txtPwd.getText().length() > 0){
-                pBar.setVisibility(View.VISIBLE);
-                pBar.setIndeterminate(true);
-                User usr = new User();
-                usr.setID(txtUsr.getText().toString());
-                usr.setPassword(txtPwd.getText().toString());
-                pBar.setIndeterminate(true);
-                pBar.setVisibility(View.VISIBLE);
-                LoginService login = new LoginService(usr, response -> {
-                    try {
-                        JSONObject data = new JSONObject(response);
-                        if(data.getBoolean("success")) {
-                            Intent sendConsult = new Intent(SliderScreen.this, Consultas.class);
-                            sendConsult.putExtra("id", data.getString("id"));
-                            startActivity(sendConsult);
-                        }else {
-                            Dialog.showAlertDialog(SliderScreen.this,"¡Error!", data.getString("message"), (dialog, which) -> {});
-                        }
-                        pBar.setIndeterminate(false);
-                        pBar.setVisibility(View.INVISIBLE);
-                    }catch (Exception ex){
-                        pBar.setIndeterminate(false);
-                        pBar.setVisibility(View.INVISIBLE);
-                        System.out.println(ex.getLocalizedMessage());
-                        Dialog.showAlertDialog(SliderScreen.this,"¡Error!", "Ha ocurrido un error en la peticion", (dialog, which) -> this.onBackPressed());
-                    }
-                });
-
-                RequestQueue queue = Volley.newRequestQueue(SliderScreen.this);
-                queue.add(login);
+                if(txtUsr.getText().toString().equals("admin_bio") && txtPwd.getText().toString().equals("admin")){
+                    Intent sendConsultas = new Intent(SliderScreen.this, Consultas.class);
+                    startActivity(sendConsultas);
+                }
 
             }else {
                 Toast.makeText(this, "No puede dejar los campos en blanco", Toast.LENGTH_SHORT).show();

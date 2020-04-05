@@ -143,15 +143,35 @@
                 tools:text="Manual completo: Si/No" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/lblPractica"
+        <LinearLayout
+
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:textAlignment="center"
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="18sp"
-            tools:text="Practica realizada: Practica 2" />
+            android:layout_height="match_parent"
+            android:layout_margin="4dp">
+
+            <TextView
+                android:id="@+id/lblProfesor"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                tools:text="Profesor: " />
+
+            <TextView
+                android:id="@+id/lblPractica"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="18sp"
+                tools:text="Practica realizada: Practica 2" />
+        </LinearLayout>
 
     </LinearLayout>
 

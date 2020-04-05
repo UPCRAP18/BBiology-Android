@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -43,7 +44,7 @@ public class Registro extends AppCompatActivity {
             aBar.setTitle(getResources().getString(R.string.lblRegistro));
         }
 
-        Button btnRegister = findViewById(R.id.btnAddUser);
+        ImageButton btnRegister = findViewById(R.id.imgbtnAdd);
         txtNombre = findViewById(R.id.txtNombre);
         txtApellido = findViewById(R.id.txtApellidos);
         txtEmail = findViewById(R.id.txtEmail);

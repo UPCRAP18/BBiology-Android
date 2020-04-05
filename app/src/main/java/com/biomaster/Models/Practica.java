@@ -2,12 +2,7 @@ package com.biomaster.Models;
 
 public class Practica {
     private int ID, Practica_Realizar;
-    private String ID_Prof;
-    private String Fecha;
-    private String Hora_Inicio;
-    private String Hora_Fin;
-    private String Practica;
-    private String Ruta;
+    private String ID_Prof, Fecha, Hora_Inicio, Hora_Fin, Practica, Ruta, Nombre_Prof;
     private boolean
             Asist_Aux,
             Asist_Chico_Serv,
@@ -21,26 +16,12 @@ public class Practica {
 
     public Practica() { }
 
-    public Practica(int ID, int practica_Realizar, String ID_Prof,
-                    String fecha, String hora_Inicio, String hora_Fin,
-                    boolean asist_Aux, boolean asist_Chico_Serv, boolean hubo_Practica,
-                    boolean muestras_Fija, boolean bata, boolean materiales_Completos,
-                    boolean puntualidad_Alumno, boolean puntualidad_Profesor, boolean manual) {
-        this.ID = ID;
-        this.Practica_Realizar = practica_Realizar;
-        this.ID_Prof = ID_Prof;
-        this.Fecha = fecha;
-        this.Hora_Inicio = hora_Inicio;
-        this.Hora_Fin = hora_Fin;
-        this.Asist_Aux = asist_Aux;
-        this.Asist_Chico_Serv = asist_Chico_Serv;
-        this.Hubo_Practica = hubo_Practica;
-        this.Muestras_Fija = muestras_Fija;
-        this.Bata = bata;
-        this.Materiales_Completos = materiales_Completos;
-        this.Puntualidad_Alumno = puntualidad_Alumno;
-        this.Puntualidad_Profesor = puntualidad_Profesor;
-        this.Manual = manual;
+    public String getNombre_Prof() {
+        return Nombre_Prof;
+    }
+
+    public void setNombre_Prof(String nombre_Prof) {
+        Nombre_Prof = nombre_Prof;
     }
 
     public int getID() {

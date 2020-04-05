@@ -55,7 +55,7 @@ public class Consultas extends AppCompatActivity {
                         JSONObject actual = records.getJSONObject(i);
                         Practica adding = new Practica();
                         adding.setID(actual.getInt("ID"));
-                        adding.setID_Prof(actual.getString("ID_Prof"));
+                        adding.setNombre_Prof(actual.getString("Profesor"));
                         adding.setAsist_Aux(actual.getString("Asist_Aux").equals("1"));
                         adding.setAsist_Chico_Serv(actual.getString("Asist_Serv").equals("1"));
                         adding.setPractica(actual.getString("Practica"));

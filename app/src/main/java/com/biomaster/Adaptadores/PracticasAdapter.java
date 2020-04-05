@@ -85,6 +85,7 @@ public class PracticasAdapter implements ListAdapter {
             TextView lblPuntProf = convertView.findViewById(R.id.lblPuntProf);
             TextView lblManual = convertView.findViewById(R.id.lblManual);
             TextView lblPractica = convertView.findViewById(R.id.lblPractica);
+            TextView lblProf = convertView.findViewById(R.id.lblProfesor);
 
             btnShowInfo.setText(String.format(Locale.getDefault(), "%s\n%s -- %s",
                     actualPract.getFecha(), actualPract.getHora_Inicio(), actualPract.getHora_Fin()));
@@ -108,6 +109,7 @@ public class PracticasAdapter implements ListAdapter {
             temp = actualPract.isManual() ? "Si" : "No";
             lblManual.setText(String.format(Locale.getDefault(), "Manual completo: %s", temp));
             lblPractica.setText(String.format(Locale.getDefault(), "Practica realizada: %s", actualPract.getPractica()));
+            lblProf.setText(String.format(Locale.getDefault(),"Profesor: %s", actualPract.getNombre_Prof()));
 
             lblPractica.setTextColor(this.cntx.getResources().getColor(R.color.colorPrimaryDark));
             lblPractica.setPaintFlags(lblPractica.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
