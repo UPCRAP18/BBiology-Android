@@ -5,6 +5,7 @@
     android:id="@+id/LayMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".Login">
@@ -27,7 +28,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/lblUser"
+            android:id="@+id/txtUser"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="6dp"
@@ -48,7 +49,7 @@
             android:textColorHint="@color/colorTextPrimary">
 
             <EditText
-                android:id="@+id/txtUser"
+                android:id="@+id/txteUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -66,7 +67,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/lblPwd"
+            android:id="@+id/txtPwd"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="6dp"
@@ -87,7 +88,7 @@
             android:textColorHint="@color/colorTextPrimary">
 
             <EditText
-                android:id="@+id/txtPwd"
+                android:id="@+id/txtePwd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"

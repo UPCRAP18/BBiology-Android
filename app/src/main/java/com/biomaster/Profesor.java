@@ -1,13 +1,11 @@
 package com.biomaster;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.MenuItem;
@@ -16,16 +14,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -37,7 +32,6 @@ import com.biomaster.Extras.Dialog;
 import com.biomaster.Models.Document;
 import com.biomaster.Models.Practica;
 import com.biomaster.Models.User;
-import com.wdullaer.materialdatetimepicker.date.DatePickerController;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 import org.json.JSONArray;
@@ -46,14 +40,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
-import java.util.Map;
 
 public class Profesor extends AppCompatActivity {
     private DBHelper helper;
     private User usr;
     private Spinner spHoras, spPracticas;
     private RadioGroup rgStatusPractica, rgAsistAux, rgAsistServ, rgPuntAlumno;
-    private EditText txtDate;
+    private EditText txteDate;
     private LinearLayout layOptions;
     private CheckBox cbPuntAsist, cbMatComp, cbMuesFij, cbManComp, cbPuntProf, cbBata;
     private Practica practica = new Practica();
@@ -95,9 +88,9 @@ public class Profesor extends AppCompatActivity {
         cbPuntAsist = findViewById(R.id.cbPuntAsist);
         cbBata = findViewById(R.id.cbBata);
 
-        txtDate = findViewById(R.id.txtFecha);
+        txteDate = findViewById(R.id.txteFecha);
 
-        txtDate.setText(String.format(Locale.getDefault(), "%s/%s/%s", daySel, montSel, yearSel));
+        txteDate.setText(String.format(Locale.getDefault(), "%s/%s/%s", daySel, montSel, yearSel));
 
         configureDateEntry();
 
@@ -170,11 +163,18 @@ public class Profesor extends AppCompatActivity {
         practica.setPuntualidad_Profesor(cbPuntProf.isChecked());
         practica.setManual(cbManComp.isChecked());
         //Fecha
-        practica.setFecha(txtDate.getText().toString());
+        practica.setFecha(txteDate.getText().toString());
         //Horas
         String[] horas = spHoras.getSelectedItem().toString().split("-");
         practica.setHora_Inicio(horas[0].trim());
         practica.setHora_Fin(horas[1].trim());
+
+    }
+
+    public void sendMatInfo(View view) {
+        Intent sendMateriales = new Intent(Profesor.this, Materiales.class);
+        sendMateriales.putExtra("practica", spPracticas.getSelectedItem().toString());
+        startActivity(sendMateriales);
 
     }
 
@@ -197,8 +197,8 @@ public class Profesor extends AppCompatActivity {
     }
 
     private void configureDateEntry(){
-        txtDate.setInputType(InputType.TYPE_NULL);
-        txtDate.setOnClickListener(v -> {
+        txteDate.setInputType(InputType.TYPE_NULL);
+        txteDate.setOnClickListener(v -> {
             DatePickerDialog picker = DatePickerDialog.newInstance(getListener(), yearSel, montSel, daySel);
             picker.show(getSupportFragmentManager(), "Fecha de practica");
         });
@@ -206,7 +206,7 @@ public class Profesor extends AppCompatActivity {
 
     private DatePickerDialog.OnDateSetListener getListener(){
         return (view, year1, month, dayOfMonth) ->
-            txtDate.setText(String.format(Locale.getDefault(), "%d/%d/%d", dayOfMonth, month + 1, year1));
+                txteDate.setText(String.format(Locale.getDefault(), "%d/%d/%d", dayOfMonth, month + 1, year1));
     }
 
     private void setHorarioSpinner(){

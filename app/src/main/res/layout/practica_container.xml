@@ -27,7 +27,7 @@
             android:layout_margin="4dp">
 
             <TextView
-                android:id="@+id/lblAsistAux"
+                android:id="@+id/txtAsistAux"
                 android:layout_width="0dp"
                 android:gravity="center"
                 android:layout_height="match_parent"
@@ -39,7 +39,7 @@
                 tools:text="Asistió auxiliar: Si/No" />
 
             <TextView
-                android:id="@+id/lblAsistServ"
+                android:id="@+id/txtAsistServ"
                 android:layout_width="0dp"
                 android:gravity="center"
                 android:layout_height="match_parent"
@@ -58,7 +58,7 @@
             android:layout_margin="4dp">
 
             <TextView
-                android:id="@+id/lblMFijas"
+                android:id="@+id/txtMFijas"
                 android:layout_width="0dp"
                 android:gravity="center"
                 android:layout_height="match_parent"
@@ -70,7 +70,7 @@
                 tools:text="Muestras Fijas: Si/No" />
 
             <TextView
-                android:id="@+id/lblBata"
+                android:id="@+id/txtBata"
                 android:layout_width="0dp"
                 android:gravity="center"
                 android:layout_height="match_parent"
@@ -89,7 +89,7 @@
             android:layout_margin="4dp">
 
             <TextView
-                android:id="@+id/lblMatComp"
+                android:id="@+id/txtMatComp"
                 android:layout_width="0dp"
                 android:gravity="center"
                 android:layout_height="match_parent"
@@ -101,7 +101,7 @@
                 tools:text="Materiales completos: Si/No" />
 
             <TextView
-                android:id="@+id/lblPuntAlumno"
+                android:id="@+id/txtPuntAlumno"
                 android:layout_width="0dp"
                 android:gravity="center"
                 android:layout_height="match_parent"
@@ -120,7 +120,7 @@
             android:layout_margin="4dp">
 
             <TextView
-                android:id="@+id/lblPuntProf"
+                android:id="@+id/txtPuntProf"
                 android:layout_width="0dp"
                 android:gravity="center"
                 android:layout_height="match_parent"
@@ -132,7 +132,7 @@
                 tools:text="Puntualidad profesor: Si/No" />
 
             <TextView
-                android:id="@+id/lblManual"
+                android:id="@+id/txtManual"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
@@ -150,7 +150,7 @@
             android:layout_margin="4dp">
 
             <TextView
-                android:id="@+id/lblProfesor"
+                android:id="@+id/txtProfesor"
                 android:layout_width="0dp"
                 android:gravity="center"
                 android:layout_height="match_parent"
@@ -162,7 +162,7 @@
                 tools:text="Profesor: " />
 
             <TextView
-                android:id="@+id/lblPractica"
+                android:id="@+id/txtPractica"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"

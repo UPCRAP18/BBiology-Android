@@ -2,15 +2,12 @@ package com.biomaster;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -50,7 +47,7 @@ public class Registro extends AppCompatActivity {
         txtEmail = findViewById(R.id.txtEmail);
         txtIniciales = findViewById(R.id.txtProf);
         txtMatricula = findViewById(R.id.txtMatricula);
-        txtPwd = findViewById(R.id.txtPwd);
+        txtPwd = findViewById(R.id.txtePwd);
 
         spTurno = findViewById(R.id.spTurno);
         pBar = findViewById(R.id.pBar);

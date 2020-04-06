@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">BBiology</string>
-    <string name="company_name">Una simple empresa chida</string>
+    <string name="company_name">Una aplicacion hecha para los laboratorios de Biología</string>
     <string name="btnAceptDefault">Aceptar</string>
     <string name="btnCancelDefault">Cancelar</string>
     <string name="alertOk">Se ha añadido el usuario</string>
@@ -71,7 +71,8 @@
     <string name="lblAsistServ">Asistió chico servicio:</string>
     <string name="lblPractSel">Practica realizada:</string>
     <string name="btnSave">Guardar registro</string>
-    <string name="btnPrev">Previsualizar</string>
+    <string name="btnPrev">Ver PDF</string>
+    <string name="btnMateriales">Ver Materiales</string>
     <string name="headerDocuments">Visor de documentos</string>
     <string name="headerConsultas">Registro de practicas</string>
     <string name="lblAcerca">Acerca de los autores</string>
@@ -85,5 +86,11 @@
         VENTURA VERGARA KAREN ALEXANDRA
     </string>
 
+    <!-- Materiales -->
+
+    <string name="txtHeaderMateriales">%s\nLista de materiales</string>
+    <string name="btnMatAlumno">Materiales por alumno</string>
+    <string name="btnMatEquipo">Materiales por equipo</string>
+    <string name="btnMatLab">Materiales de laboratorio</string>
 
 </resources>

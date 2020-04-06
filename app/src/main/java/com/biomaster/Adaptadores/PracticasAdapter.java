@@ -76,16 +76,16 @@ public class PracticasAdapter implements ListAdapter {
             convertView = inflater.inflate(R.layout.practica_container, null);
             Button btnShowInfo = convertView.findViewById(R.id.btnShowInfo);
             LinearLayout infoLayout = convertView.findViewById(R.id.InfoLayout);
-            TextView lblAsistAux = convertView.findViewById(R.id.lblAsistAux);
-            TextView lblAsistServ = convertView.findViewById(R.id.lblAsistServ);
-            TextView lblMFijas = convertView.findViewById(R.id.lblMFijas);
-            TextView lblBata = convertView.findViewById(R.id.lblBata);
-            TextView lblMatComp = convertView.findViewById(R.id.lblMatComp);
-            TextView lblPuntAlumno = convertView.findViewById(R.id.lblPuntAlumno);
-            TextView lblPuntProf = convertView.findViewById(R.id.lblPuntProf);
-            TextView lblManual = convertView.findViewById(R.id.lblManual);
-            TextView lblPractica = convertView.findViewById(R.id.lblPractica);
-            TextView lblProf = convertView.findViewById(R.id.lblProfesor);
+            TextView txtAsistAux = convertView.findViewById(R.id.txtAsistAux);
+            TextView txtAsistServ = convertView.findViewById(R.id.txtAsistServ);
+            TextView txtMFijas = convertView.findViewById(R.id.txtMFijas);
+            TextView txtBata = convertView.findViewById(R.id.txtBata);
+            TextView txtMatComp = convertView.findViewById(R.id.txtMatComp);
+            TextView txtPuntAlumno = convertView.findViewById(R.id.txtPuntAlumno);
+            TextView txtPuntProf = convertView.findViewById(R.id.txtPuntProf);
+            TextView txtManual = convertView.findViewById(R.id.txtManual);
+            TextView txtPractica = convertView.findViewById(R.id.txtPractica);
+            TextView txtProf = convertView.findViewById(R.id.txtProfesor);
 
             btnShowInfo.setText(String.format(Locale.getDefault(), "%s\n%s -- %s",
                     actualPract.getFecha(), actualPract.getHora_Inicio(), actualPract.getHora_Fin()));
@@ -93,26 +93,26 @@ public class PracticasAdapter implements ListAdapter {
             infoLayout.setVisibility(View.GONE);
 
             String temp = actualPract.isAsist_Aux() ? "Si" : "No";
-            lblAsistAux.setText(String.format(Locale.getDefault(), "Asistió auxiliar: %s", temp));
+            txtAsistAux.setText(String.format(Locale.getDefault(), "Asistió auxiliar: %s", temp));
             temp = actualPract.isAsist_Chico_Serv() ? "Si" : "No";
-            lblAsistServ.setText(String.format(Locale.getDefault(), "Asistió chico de servicio: %s", temp));
+            txtAsistServ.setText(String.format(Locale.getDefault(), "Asistió chico de servicio: %s", temp));
             temp = actualPract.isMuestras_Fija() ? "Si" : "No";
-            lblMFijas.setText(String.format(Locale.getDefault(), "Muestras Fijas: %s", temp));
+            txtMFijas.setText(String.format(Locale.getDefault(), "Muestras Fijas: %s", temp));
             temp = actualPract.isBata() ? "Si" : "No";
-            lblBata.setText(String.format(Locale.getDefault(), "Bata: %s", temp));
+            txtBata.setText(String.format(Locale.getDefault(), "Bata: %s", temp));
             temp = actualPract.isMateriales_Completos() ? "Si" : "No";
-            lblMatComp.setText(String.format(Locale.getDefault(), "Materiales completos: %s", temp));
+            txtMatComp.setText(String.format(Locale.getDefault(), "Materiales completos: %s", temp));
             temp = actualPract.isPuntualidad_Alumno() ? "Si" : "No";
-            lblPuntAlumno.setText(String.format(Locale.getDefault(), "Puntualidad alumno: %s", temp));
+            txtPuntAlumno.setText(String.format(Locale.getDefault(), "Puntualidad alumno: %s", temp));
             temp = actualPract.isPuntualidad_Profesor() ? "Si" : "No";
-            lblPuntProf.setText(String.format(Locale.getDefault(), "Puntualidad profesor: %s", temp));
+            txtPuntProf.setText(String.format(Locale.getDefault(), "Puntualidad profesor: %s", temp));
             temp = actualPract.isManual() ? "Si" : "No";
-            lblManual.setText(String.format(Locale.getDefault(), "Manual completo: %s", temp));
-            lblPractica.setText(String.format(Locale.getDefault(), "Practica realizada: %s", actualPract.getPractica()));
-            lblProf.setText(String.format(Locale.getDefault(),"Profesor: %s", actualPract.getNombre_Prof()));
+            txtManual.setText(String.format(Locale.getDefault(), "Manual completo: %s", temp));
+            txtPractica.setText(String.format(Locale.getDefault(), "Practica realizada: %s", actualPract.getPractica()));
+            txtProf.setText(String.format(Locale.getDefault(), "Profesor: %s", actualPract.getNombre_Prof()));
 
-            lblPractica.setTextColor(this.cntx.getResources().getColor(R.color.colorPrimaryDark));
-            lblPractica.setPaintFlags(lblPractica.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+            txtPractica.setTextColor(this.cntx.getResources().getColor(R.color.colorPrimaryDark));
+            txtPractica.setPaintFlags(txtPractica.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
             if(actualPract.isHubo_Practica()){
                 btnShowInfo.setOnClickListener(v -> {
@@ -126,7 +126,7 @@ public class PracticasAdapter implements ListAdapter {
             }
 
 
-            lblPractica.setOnClickListener( v -> {
+            txtPractica.setOnClickListener(v -> {
                 Intent sendVisualizer = new Intent(this.cntx, DocumentViewer.class);
                 sendVisualizer.putExtra("path", actualPract.getRuta());
                 this.cntx.startActivity(sendVisualizer);

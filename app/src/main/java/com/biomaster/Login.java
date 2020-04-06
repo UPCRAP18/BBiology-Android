@@ -26,7 +26,7 @@ import org.json.JSONObject;
 public class Login extends AppCompatActivity {
 
     User usr = new User();
-    EditText txtUser, txtPwd;
+    EditText txteUser, txtePwd;
     ProgressBar pBar;
     DBHelper helper;
 
@@ -40,8 +40,8 @@ public class Login extends AppCompatActivity {
             aBar.setTitle(getResources().getString(R.string.lblLogin));
         }
         helper = new DBHelper(this);
-        txtUser = findViewById(R.id.txtUser);
-        txtPwd = findViewById(R.id.txtPwd);
+        txteUser = findViewById(R.id.txteUser);
+        txtePwd = findViewById(R.id.txtePwd);
         pBar = findViewById(R.id.pBar);
         Button btnLogin = findViewById(R.id.btnLogin);
 
@@ -49,8 +49,8 @@ public class Login extends AppCompatActivity {
             if(validateFields()){
                 pBar.setVisibility(View.VISIBLE);
                 pBar.setIndeterminate(true);
-                usr.setID(txtUser.getText().toString());
-                usr.setPassword(txtPwd.getText().toString());
+                usr.setID(txteUser.getText().toString());
+                usr.setPassword(txtePwd.getText().toString());
 
                 LoginService login = new LoginService(usr, getResponseListener());
 
@@ -78,17 +78,20 @@ public class Login extends AppCompatActivity {
                     usr.setIniciales(data.getString("iniciales"));
                     usr.setCorreo(data.getString("email"));
                     usr.setTurno(data.getString("turno"));
-                    usr.setPassword(txtPwd.getText().toString());
+                    usr.setPassword(txtePwd.getText().toString());
                     if(helper.setDataUser(usr)){
                         pBar.setIndeterminate(false);
                         pBar.setVisibility(View.INVISIBLE);
-                        Dialog.showAlertDialog(Login.this,
+                        /*Dialog.showAlertDialog(Login.this,
                                 "¡Correcto!",
                                 "Se ha iniciado sesion correctamente",
                                 (dialog, which) -> {
                                     Intent sendProf = new Intent(Login.this, Profesor.class);
                                     startActivity(sendProf);
-                                });
+                                });*/
+                        Toast.makeText(Login.this, "Se ha iniciado sesion", Toast.LENGTH_SHORT).show();
+                        Intent sendProf = new Intent(Login.this, Profesor.class);
+                        startActivity(sendProf);
                     }else{
                         pBar.setIndeterminate(false);
                         pBar.setVisibility(View.INVISIBLE);
@@ -100,7 +103,8 @@ public class Login extends AppCompatActivity {
                 }else {
                     pBar.setIndeterminate(false);
                     pBar.setVisibility(View.INVISIBLE);
-                    Dialog.showAlertDialog(Login.this,"¡Error!", data.getString("message"), (dialog, which) -> {});
+                    //Dialog.showAlertDialog(Login.this,"¡Error!", data.getString("message"), (dialog, which) -> {});
+                    Toast.makeText(Login.this, data.getString("message"), Toast.LENGTH_SHORT).show();
                 }
             }catch (Exception error){
                 pBar.setIndeterminate(false);
@@ -112,8 +116,8 @@ public class Login extends AppCompatActivity {
     }
 
     private boolean validateFields(){
-        return (txtUser.getText().length() > 0 &&
-                txtPwd.getText().length() > 0 );
+        return (txteUser.getText().length() > 0 &&
+                txtePwd.getText().length() > 0);
     }
 
     @Override

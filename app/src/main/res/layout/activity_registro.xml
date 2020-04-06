@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,11 +24,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="6dp"
+
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/lblProf"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/design_default_color_error"
                 android:textSize="18sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -44,6 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/htProf"
+                    android:importantForAutofill="no"
                     android:inputType="text"
                     android:textAlignment="center"
                     android:textSize="20sp" />
@@ -65,7 +68,7 @@
                 android:gravity="center"
                 android:text="@string/lblMatricula"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/design_default_color_error"
                 android:textSize="20sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -81,6 +84,7 @@
                     android:id="@+id/txtMatricula"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:importantForAutofill="no"
                     android:hint="@string/htMat"
                     android:inputType="text"
                     android:textAlignment="center"
@@ -100,10 +104,11 @@
                 android:layout_height="match_parent"
                 android:layout_margin="6dp"
                 android:layout_weight="1"
+                android:importantForAutofill="no"
                 android:gravity="center"
                 android:text="@string/lblNombre"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/design_default_color_error"
                 android:textSize="20sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -120,6 +125,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/htNombre"
+                    android:importantForAutofill="no"
                     android:inputType="text"
                     android:textAlignment="center"
                     android:textSize="20sp" />
@@ -141,7 +147,7 @@
                 android:gravity="center"
                 android:text="@string/lblApellido"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/design_default_color_error"
                 android:textSize="18sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -158,6 +164,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/htApellidos"
+                    android:importantForAutofill="no"
                     android:inputType="text"
                     android:textAlignment="center"
                     android:textSize="20sp" />
@@ -179,7 +186,7 @@
                 android:gravity="center"
                 android:text="@string/lblEmail"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/design_default_color_error"
                 android:textSize="18sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -195,6 +202,7 @@
                     android:id="@+id/txtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:importantForAutofill="no"
                     android:hint="@string/htEmail"
                     android:inputType="textWebEmailAddress"
                     android:textAlignment="center"
@@ -217,7 +225,7 @@
                 android:gravity="center"
                 android:text="@string/lblPwd"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/design_default_color_error"
                 android:textSize="18sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -230,10 +238,11 @@
                 android:textColorHint="@color/design_default_color_primary_dark">
 
                 <EditText
-                    android:id="@+id/txtPwd"
+                    android:id="@+id/txtePwd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
+                    android:importantForAutofill="no"
                     android:textAlignment="center"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -254,7 +263,7 @@
                 android:gravity="center"
                 android:text="@string/lblTurno"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/design_default_color_error"
                 android:textSize="18sp" />
 
             <Spinner

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".Materiales">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="22sp"
+            tools:text="@string/txtHeaderMateriales" />
+
+        <Button
+            android:id="@+id/btnMatAlumn"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="6dp"
+            android:background="@drawable/round_button_white_blue"
+            android:text="@string/btnMatAlumno"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp" />
+
+        <ListView
+            android:id="@+id/LVMatAlumno"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="6dp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnMatEquip"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="6dp"
+            android:background="@drawable/round_button_white_blue"
+            android:text="@string/btnMatEquipo"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp" />
+
+        <ListView
+            android:id="@+id/LVMatEquip"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="6dp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnMatLab"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="6dp"
+            android:background="@drawable/round_button_white_blue"
+            android:text="@string/btnMatLab"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp" />
+
+        <ListView
+            android:id="@+id/LVMatLab"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="6dp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </LinearLayout>
+</ScrollView>

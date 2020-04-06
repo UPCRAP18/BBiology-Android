@@ -3,7 +3,6 @@ package com.biomaster;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
-import android.app.Application;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
@@ -17,15 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
-import com.biomaster.Conectores.Requests.LoginService;
-import com.biomaster.Extras.Dialog;
-import com.biomaster.Models.User;
-
-import org.json.JSONObject;
 
 public class SliderScreen extends AppCompatActivity {
     private ImageView imgSlider;
@@ -78,14 +68,14 @@ public class SliderScreen extends AppCompatActivity {
         params.gravity = Gravity.CENTER;
         mainLay.setLayoutParams(params);
 
-        TextView txtUsr = loginScreen.findViewById(R.id.txtUser);
-        TextView txtPwd = loginScreen.findViewById(R.id.txtPwd);
+        TextView txtUsr = loginScreen.findViewById(R.id.txteUser);
+        TextView txtPwd = loginScreen.findViewById(R.id.txtePwd);
         Button btnLogin = loginScreen.findViewById(R.id.btnLogin);
-        ProgressBar pBar = loginScreen.findViewById(R.id.pBar);
 
         btnLogin.setOnClickListener(v -> {
             if(txtUsr.getText().length() > 0 && txtPwd.getText().length() > 0){
                 if(txtUsr.getText().toString().equals("admin_bio") && txtPwd.getText().toString().equals("admin")){
+                    Toast.makeText(this, "Bienvenido administrador", Toast.LENGTH_SHORT).show();
                     Intent sendConsultas = new Intent(SliderScreen.this, Consultas.class);
                     startActivity(sendConsultas);
                 }
@@ -100,14 +90,30 @@ public class SliderScreen extends AppCompatActivity {
     }
 
     private void renderSlider(){
-        anims.addFrame(getResources().getDrawable(R.drawable.w1), 3000);
-        anims.addFrame(getResources().getDrawable(R.drawable.w2), 3000);
-        anims.addFrame(getResources().getDrawable(R.drawable.w3), 3000);
-        anims.addFrame(getResources().getDrawable(R.drawable.w4), 3000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w1), 2000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w2), 2000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w3), 2000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w4), 2000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w5), 2000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w6), 2000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w7), 2000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w8), 2000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w9), 2000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w10), 2000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w11), 2000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w12), 2000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w13), 2000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w14), 2000);
+        anims.addFrame(getResources().getDrawable(R.drawable.w15), 2000);
+
         imgSlider.setImageDrawable(anims);
         anims.start();
     }
 
+
+    public void exitApp(View view) {
+        this.finish();
+    }
 
     @Override
     public void onBackPressed() {
