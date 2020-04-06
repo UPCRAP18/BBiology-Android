@@ -12,7 +12,7 @@
         tools:context=".Materiales">
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/txtPractica"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
@@ -28,6 +28,7 @@
             android:layout_gravity="center"
             android:layout_margin="6dp"
             android:background="@drawable/round_button_white_blue"
+            android:onClick="changeVisibility"
             android:text="@string/btnMatAlumno"
             android:textAlignment="center"
             android:textColor="@color/colorTextPrimary"
@@ -36,7 +37,7 @@
         <ListView
             android:id="@+id/LVMatAlumno"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="280dp"
             android:layout_margin="6dp"
             android:visibility="gone"
             tools:visibility="visible" />
@@ -48,6 +49,7 @@
             android:layout_gravity="center"
             android:layout_margin="6dp"
             android:background="@drawable/round_button_white_blue"
+            android:onClick="changeVisibility"
             android:text="@string/btnMatEquipo"
             android:textAlignment="center"
             android:textColor="@color/colorTextPrimary"
@@ -56,7 +58,7 @@
         <ListView
             android:id="@+id/LVMatEquip"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="280dp"
             android:layout_margin="6dp"
             android:visibility="gone"
             tools:visibility="visible" />
@@ -68,6 +70,7 @@
             android:layout_gravity="center"
             android:layout_margin="6dp"
             android:background="@drawable/round_button_white_blue"
+            android:onClick="changeVisibility"
             android:text="@string/btnMatLab"
             android:textAlignment="center"
             android:textColor="@color/colorTextPrimary"
@@ -76,7 +79,7 @@
         <ListView
             android:id="@+id/LVMatLab"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="280dp"
             android:layout_margin="6dp"
             android:visibility="gone"
             tools:visibility="visible" />
