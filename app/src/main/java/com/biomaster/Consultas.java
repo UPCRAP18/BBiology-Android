@@ -36,17 +36,13 @@ public class Consultas extends AppCompatActivity {
             aBar.setDisplayHomeAsUpEnabled(true);
             aBar.setTitle(getResources().getString(R.string.headerConsultas));
         }
-        String id = "";
-        if(getIntent().getStringExtra("id") != null){
-            id = getIntent().getStringExtra("id");
-        }
 
         ListView lView = findViewById(R.id.listRecords);
 
         ProgressDialog pDialog = ProgressDialog.show(Consultas.this, "", "Cargando...", true);
         pDialog.show();
 
-        RecordsService recordsService = new RecordsService(id, response -> {
+        RecordsService recordsService = new RecordsService( response -> {
             try {
                 JSONObject data = new JSONObject(response);
                 if(data.getBoolean("success")){
@@ -78,13 +74,15 @@ public class Consultas extends AppCompatActivity {
                     lView.setAdapter(new PracticasAdapter(practicas, Consultas.this));
 
                 }else {
-                    Dialog.showAlertDialog(Consultas.this,"¡Error!", data.getString("message"), (dialog, which) -> this.onBackPressed());
+                    Dialog.showAlertDialog(Consultas.this,"¡Error!",
+                            data.getString("message"), (dialog, which) -> this.onBackPressed());
                 }
                 pDialog.dismiss();
             }catch (Exception ex){
                 pDialog.dismiss();
                 System.out.println(ex.getLocalizedMessage());
-                Dialog.showAlertDialog(Consultas.this,"¡Error!", "Ha ocurrido un error en la peticion", (dialog, which) -> this.onBackPressed());
+                Dialog.showAlertDialog(Consultas.this,"¡Error!",
+                        "Ha ocurrido un error en la peticion", (dialog, which) -> this.onBackPressed());
             }
         });
 

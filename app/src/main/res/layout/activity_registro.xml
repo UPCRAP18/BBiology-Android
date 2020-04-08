@@ -24,7 +24,6 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="6dp"
-
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/lblProf"
@@ -32,25 +31,17 @@
                 android:textColor="@color/design_default_color_error"
                 android:textSize="18sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
+                android:id="@+id/txtProf"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="6dp"
                 android:layout_weight="2"
-                android:gravity="center"
+                android:layout_height="match_parent"
+                android:hint="@string/htProf"
+                android:importantForAutofill="no"
+                android:inputType="text"
                 android:textAlignment="center"
-                android:textColorHint="@color/design_default_color_primary_dark">
+                android:textSize="20sp" />
 
-                <EditText
-                    android:id="@+id/txtProf"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/htProf"
-                    android:importantForAutofill="no"
-                    android:inputType="text"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
-            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -71,25 +62,16 @@
                 android:textColor="@color/design_default_color_error"
                 android:textSize="20sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
+                android:id="@+id/txtMatricula"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="6dp"
                 android:layout_weight="2"
-                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:hint="@string/htMat"
+                android:inputType="text"
                 android:textAlignment="center"
-                android:textColorHint="@color/design_default_color_primary_dark">
-
-                <EditText
-                    android:id="@+id/txtMatricula"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:importantForAutofill="no"
-                    android:hint="@string/htMat"
-                    android:inputType="text"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -111,25 +93,16 @@
                 android:textColor="@color/design_default_color_error"
                 android:textSize="20sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
+                android:id="@+id/txtNombre"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="6dp"
                 android:layout_weight="2"
-                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:hint="@string/htNombre"
+                android:importantForAutofill="no"
+                android:inputType="text"
                 android:textAlignment="center"
-                android:textColorHint="@color/design_default_color_primary_dark">
-
-                <EditText
-                    android:id="@+id/txtNombre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/htNombre"
-                    android:importantForAutofill="no"
-                    android:inputType="text"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -150,25 +123,16 @@
                 android:textColor="@color/design_default_color_error"
                 android:textSize="18sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
+                android:id="@+id/txtApellidos"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="6dp"
                 android:layout_weight="2"
-                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:hint="@string/htApellidos"
+                android:importantForAutofill="no"
+                android:inputType="text"
                 android:textAlignment="center"
-                android:textColorHint="@color/design_default_color_primary_dark">
-
-                <EditText
-                    android:id="@+id/txtApellidos"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/htApellidos"
-                    android:importantForAutofill="no"
-                    android:inputType="text"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -189,25 +153,17 @@
                 android:textColor="@color/design_default_color_error"
                 android:textSize="18sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
+                android:id="@+id/txtEmail"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="6dp"
                 android:layout_weight="2"
-                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:hint="@string/htEmail"
+                android:inputType="textWebEmailAddress"
                 android:textAlignment="center"
-                android:textColorHint="@color/design_default_color_primary_dark">
+                android:textSize="18sp" />
 
-                <EditText
-                    android:id="@+id/txtEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:importantForAutofill="no"
-                    android:hint="@string/htEmail"
-                    android:inputType="textWebEmailAddress"
-                    android:textAlignment="center"
-                    android:textSize="18sp" />
-            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -228,24 +184,16 @@
                 android:textColor="@color/design_default_color_error"
                 android:textSize="18sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
+                android:id="@+id/txtePwd"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="6dp"
                 android:layout_weight="2"
-                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:importantForAutofill="no"
                 android:textAlignment="center"
-                android:textColorHint="@color/design_default_color_primary_dark">
+                android:textSize="20sp" />
 
-                <EditText
-                    android:id="@+id/txtePwd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:importantForAutofill="no"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
-            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
         <LinearLayout

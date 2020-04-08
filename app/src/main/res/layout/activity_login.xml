@@ -39,25 +39,17 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <EditText
+            android:id="@+id/txteUser"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
             android:layout_weight="3"
+            android:layout_height="wrap_content"
             android:gravity="center"
+            android:hint="@string/htEmail"
+            android:inputType="text"
             android:textAlignment="center"
-            android:textColorHint="@color/colorTextPrimary">
+            android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/txteUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:hint="@string/htEmail"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -78,25 +70,16 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <EditText
+            android:id="@+id/txtePwd"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
             android:layout_weight="3"
+            android:layout_height="wrap_content"
             android:gravity="center"
+            android:hint="@string/htPwd"
+            android:inputType="text|textPassword"
             android:textAlignment="center"
-            android:textColorHint="@color/colorTextPrimary">
-
-            <EditText
-                android:id="@+id/txtePwd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:hint="@string/htPwd"
-                android:inputType="text|textPassword"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:textSize="18sp" />
     </LinearLayout>
 
     <Button

@@ -125,7 +125,6 @@ public class Profesor extends AppCompatActivity {
 
             RequestQueue queue = Volley.newRequestQueue(Profesor.this);
             queue.add(addPract);
-            //System.out.println(practica.toString());
 
         });
 
@@ -146,7 +145,6 @@ public class Profesor extends AppCompatActivity {
             cbMuesFij.setChecked(false);
             practicaID = 0;
         }
-
         practica.setID_Prof(helper.getData_Usuario().getID());
         RadioButton rdTrue = findViewById(R.id.rdAuxYes);
         practica.setAsist_Aux(rdTrue.isChecked());
@@ -162,9 +160,7 @@ public class Profesor extends AppCompatActivity {
         practica.setPuntualidad_Alumno(rdTrue.isChecked());
         practica.setPuntualidad_Profesor(cbPuntProf.isChecked());
         practica.setManual(cbManComp.isChecked());
-        //Fecha
         practica.setFecha(txteDate.getText().toString());
-        //Horas
         String[] horas = spHoras.getSelectedItem().toString().split("-");
         practica.setHora_Inicio(horas[0].trim());
         practica.setHora_Fin(horas[1].trim());
@@ -183,15 +179,18 @@ public class Profesor extends AppCompatActivity {
             try{
                 JSONObject data = new JSONObject(response);
                 if(data.getBoolean("success")){
-                    Dialog.showAlertDialog(Profesor.this, "¡Correcto!", data.getString("message"), (dialog1, which) -> {});
+                    Dialog.showAlertDialog(Profesor.this, "¡Correcto!",
+                            data.getString("message"), (dialog1, which) -> {});
                 }else{
-                    Dialog.showAlertDialog(Profesor.this, "¡Error!", data.getString("message"), (dialog1, which) -> {});
+                    Dialog.showAlertDialog(Profesor.this, "¡Error!",
+                            data.getString("message"), (dialog1, which) -> {});
                 }
                 dialog.dismiss();
             }catch(Exception ex){
                 System.out.println(ex.getLocalizedMessage());
                 dialog.dismiss();
-                Dialog.showAlertDialog(Profesor.this,"¡Error!", "Ha ocurrido un error en la peticion", (dialog1, which) -> this.recreate());
+                Dialog.showAlertDialog(Profesor.this,"¡Error!",
+                        "Ha ocurrido un error en la peticion", (dialog1, which) -> this.recreate());
             }
         };
     }
@@ -234,7 +233,8 @@ public class Profesor extends AppCompatActivity {
                     docsName = new String[objects.length()];
                     for(int i = 0; i < objects.length(); i++){
                         JSONObject actual = (JSONObject) objects.get(i);
-                        Document add = new Document(actual.getInt("ID"), actual.getString("Nombre"), actual.getString("Ruta"));
+                        Document add = new Document(actual.getInt("ID"),
+                                actual.getString("Nombre"), actual.getString("Ruta"));
                         docs.add(add);
                         docsName[i] = actual.getString("Nombre");
                     }
@@ -243,23 +243,20 @@ public class Profesor extends AppCompatActivity {
                 }
             }catch(Exception ex){
                 System.out.println(ex.getLocalizedMessage());
-                Dialog.showAlertDialog(Profesor.this,"¡Error!", "Ha ocurrido un error en la peticion", (dialog, which) -> this.recreate());
+                Dialog.showAlertDialog(Profesor.this,"¡Error!",
+                        "Ha ocurrido un error en la peticion", (dialog, which) -> this.recreate());
             }
         };
     }
 
     private void setPractsSpinnerListener(){
-
         spPracticas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 practSelected = docs.get(position);
             }
-
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
+            public void onNothingSelected(AdapterView<?> parent) { }
         });
     }
 

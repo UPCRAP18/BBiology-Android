@@ -30,7 +30,6 @@ public class SliderScreen extends AppCompatActivity {
         Button btnLogin = findViewById(R.id.btnLogin);
         Button btnRegister = findViewById(R.id.btnRegister);
         Button btnInfo = findViewById(R.id.btnInfo);
-
         btnInfo.setOnClickListener(v -> {
             LayoutInflater inflater = getLayoutInflater();
             Toast acercade = new Toast(getApplicationContext());
@@ -39,21 +38,16 @@ public class SliderScreen extends AppCompatActivity {
             acercade.setView(message);
             acercade.show();
         });
-
         btnLogin.setOnClickListener(v-> {
             Intent sendLogin = new Intent(SliderScreen.this, Login.class);
             this.startActivity(sendLogin);
         });
-
         btnRegister.setOnClickListener(v -> {
             Intent sendRegister = new Intent(SliderScreen.this, Registro.class);
             this.startActivity(sendRegister);
         });
-
         btnConsultar.setOnClickListener(v -> setFloatingScreen() );
-
         renderSlider();
-
     }
 
 
@@ -64,14 +58,14 @@ public class SliderScreen extends AppCompatActivity {
         builder.setView(loginScreen);
 
         LinearLayout mainLay = loginScreen.findViewById(R.id.LayMain);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.MATCH_PARENT);
         params.gravity = Gravity.CENTER;
         mainLay.setLayoutParams(params);
-
         TextView txtUsr = loginScreen.findViewById(R.id.txteUser);
         TextView txtPwd = loginScreen.findViewById(R.id.txtePwd);
         Button btnLogin = loginScreen.findViewById(R.id.btnLogin);
-
         btnLogin.setOnClickListener(v -> {
             if(txtUsr.getText().length() > 0 && txtPwd.getText().length() > 0){
                 if(txtUsr.getText().toString().equals("admin_bio") && txtPwd.getText().toString().equals("admin")){
@@ -79,11 +73,9 @@ public class SliderScreen extends AppCompatActivity {
                     Intent sendConsultas = new Intent(SliderScreen.this, Consultas.class);
                     startActivity(sendConsultas);
                 }
-
             }else {
                 Toast.makeText(this, "No puede dejar los campos en blanco", Toast.LENGTH_SHORT).show();
             }
-
         });
 
         builder.create().show();

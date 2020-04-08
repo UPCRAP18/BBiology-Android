@@ -24,12 +24,10 @@ import com.biomaster.Models.User;
 import org.json.JSONObject;
 
 public class Registro extends AppCompatActivity {
-
     private ProgressBar pBar;
     private EditText txtIniciales, txtNombre, txtApellido, txtEmail, txtMatricula, txtPwd;
     private Spinner spTurno;
     private User usr;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +38,6 @@ public class Registro extends AppCompatActivity {
             aBar.setDisplayHomeAsUpEnabled(true);
             aBar.setTitle(getResources().getString(R.string.lblRegistro));
         }
-
         ImageButton btnRegister = findViewById(R.id.imgbtnAdd);
         txtNombre = findViewById(R.id.txtNombre);
         txtApellido = findViewById(R.id.txtApellidos);
@@ -48,12 +45,12 @@ public class Registro extends AppCompatActivity {
         txtIniciales = findViewById(R.id.txtProf);
         txtMatricula = findViewById(R.id.txtMatricula);
         txtPwd = findViewById(R.id.txtePwd);
-
         spTurno = findViewById(R.id.spTurno);
         pBar = findViewById(R.id.pBar);
-
-        spTurno.setAdapter(new ArrayAdapter<>(Registro.this, R.layout.custom_spinner_item, getResources().getStringArray(R.array.Turnos)));
-
+        spTurno.setAdapter(new ArrayAdapter<>(
+                Registro.this,
+                R.layout.custom_spinner_item,
+                getResources().getStringArray(R.array.Turnos)));
         btnRegister.setOnClickListener(v -> {
             if(validateFields()){
                 sendRequest();
@@ -61,29 +58,28 @@ public class Registro extends AppCompatActivity {
                 Toast.makeText(Registro.this, "No puede dejar los campos en blanco", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     private void sendRequest(){
         bulkJson();
-
         pBar.setIndeterminate(true);
         pBar.setVisibility(View.VISIBLE);
-
         RegisterService register = new RegisterService(usr, getResponseListener());
         RequestQueue queue = Volley.newRequestQueue(Registro.this);
         queue.add(register);
 
     }
-
     private Response.Listener<String> getResponseListener(){
         return response1 -> {
             try {
                 JSONObject data = new JSONObject(response1);
                 if(data.has("message")){
-                    Dialog.showAlertDialog(Registro.this,"¡Correcto!", data.getString("message"), (dialog, which) -> onBackPressed());
+                    Dialog.showAlertDialog(Registro.this,
+                            "¡Correcto!",
+                            data.getString("message"), (dialog, which) -> onBackPressed());
                 }else {
-                    Dialog.showAlertDialog(Registro.this,"¡Error!", data.getString("error"), (dialog, which) -> {});
+                    Dialog.showAlertDialog(Registro.this,
+                            "¡Error!", data.getString("error"), (dialog, which) -> {});
                 }
                 pBar.setIndeterminate(false);
                 pBar.setVisibility(View.INVISIBLE);
@@ -91,7 +87,8 @@ public class Registro extends AppCompatActivity {
                 pBar.setIndeterminate(false);
                 pBar.setVisibility(View.INVISIBLE);
                 System.out.println(error.getLocalizedMessage());
-                Dialog.showAlertDialog(Registro.this,"¡Error!", "Ha ocurrido un error en la peticion", (dialog, which) -> this.recreate());
+                Dialog.showAlertDialog(Registro.this,"¡Error!",
+                        "Ha ocurrido un error en la peticion", (dialog, which) -> this.recreate());
             }
         };
     }

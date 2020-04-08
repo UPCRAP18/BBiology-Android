@@ -66,7 +66,7 @@ public class Materiales extends AppCompatActivity {
                 break;
             case "Practica 4":
                 setArrayFor4();
-                setLV2 = false;
+                setLV1 = false;
                 break;
             case "Practica 7":
                 setArrayFor7();

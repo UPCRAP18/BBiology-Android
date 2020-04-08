@@ -44,25 +44,19 @@ public class Login extends AppCompatActivity {
         txtePwd = findViewById(R.id.txtePwd);
         pBar = findViewById(R.id.pBar);
         Button btnLogin = findViewById(R.id.btnLogin);
-
         btnLogin.setOnClickListener(v -> {
             if(validateFields()){
                 pBar.setVisibility(View.VISIBLE);
                 pBar.setIndeterminate(true);
                 usr.setID(txteUser.getText().toString());
                 usr.setPassword(txtePwd.getText().toString());
-
                 LoginService login = new LoginService(usr, getResponseListener());
-
                 RequestQueue queue = Volley.newRequestQueue(Login.this);
                 queue.add(login);
-
             }else {
                 Toast.makeText(this, "No puede dejar los campos en blanco", Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 
     private Response.Listener<String> getResponseListener (){
@@ -82,13 +76,6 @@ public class Login extends AppCompatActivity {
                     if(helper.setDataUser(usr)){
                         pBar.setIndeterminate(false);
                         pBar.setVisibility(View.INVISIBLE);
-                        /*Dialog.showAlertDialog(Login.this,
-                                "¡Correcto!",
-                                "Se ha iniciado sesion correctamente",
-                                (dialog, which) -> {
-                                    Intent sendProf = new Intent(Login.this, Profesor.class);
-                                    startActivity(sendProf);
-                                });*/
                         Toast.makeText(Login.this, "Se ha iniciado sesion", Toast.LENGTH_SHORT).show();
                         Intent sendProf = new Intent(Login.this, Profesor.class);
                         startActivity(sendProf);
@@ -103,7 +90,6 @@ public class Login extends AppCompatActivity {
                 }else {
                     pBar.setIndeterminate(false);
                     pBar.setVisibility(View.INVISIBLE);
-                    //Dialog.showAlertDialog(Login.this,"¡Error!", data.getString("message"), (dialog, which) -> {});
                     Toast.makeText(Login.this, data.getString("message"), Toast.LENGTH_SHORT).show();
                 }
             }catch (Exception error){

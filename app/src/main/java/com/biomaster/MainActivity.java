@@ -17,6 +17,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button btnEntrar = findViewById(R.id.btnEntrar);
 
+        btnEntrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         btnEntrar.setOnClickListener(v -> {
             Intent slider_act = new Intent(MainActivity.this, SliderScreen.class);
             this.startActivity(slider_act);
