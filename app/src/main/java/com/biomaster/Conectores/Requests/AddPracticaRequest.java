@@ -16,6 +16,8 @@ public class AddPracticaRequest extends StringRequest {
         params = new HashMap<>();
 
         params.put("ID_Prof", practica.getID_Prof());
+        params.put("Grupo", practica.getGrupo());
+        params.put("Comentarios", practica.getComentarios());
         params.put("Asist_Aux", String.valueOf(practica.isAsist_Aux()));
         params.put("Asist_Chico_Serv", String.valueOf(practica.isAsist_Chico_Serv()));
         params.put("Practica_Realizar", String.valueOf(practica.getPractica_Realizar()));

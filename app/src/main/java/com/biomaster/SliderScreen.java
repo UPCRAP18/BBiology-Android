@@ -1,7 +1,5 @@
 package com.biomaster;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
@@ -9,13 +7,13 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SliderScreen extends AppCompatActivity {
     private ImageView imgSlider;
@@ -67,11 +65,13 @@ public class SliderScreen extends AppCompatActivity {
         TextView txtPwd = loginScreen.findViewById(R.id.txtePwd);
         Button btnLogin = loginScreen.findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(v -> {
-            if(txtUsr.getText().length() > 0 && txtPwd.getText().length() > 0){
+            if (!txtUsr.getText().toString().isEmpty() && !txtPwd.getText().toString().isEmpty()) {
                 if(txtUsr.getText().toString().equals("admin_bio") && txtPwd.getText().toString().equals("admin")){
                     Toast.makeText(this, "Bienvenido administrador", Toast.LENGTH_SHORT).show();
                     Intent sendConsultas = new Intent(SliderScreen.this, Consultas.class);
                     startActivity(sendConsultas);
+                } else {
+                    Toast.makeText(this, "Las credenciales son incorrectas", Toast.LENGTH_SHORT).show();
                 }
             }else {
                 Toast.makeText(this, "No puede dejar los campos en blanco", Toast.LENGTH_SHORT).show();

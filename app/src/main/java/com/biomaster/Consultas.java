@@ -1,18 +1,17 @@
 package com.biomaster;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.biomaster.Adaptadores.PracticasAdapter;
-import com.biomaster.Conectores.Requests.GetPracticasRequest;
 import com.biomaster.Conectores.Requests.RecordsService;
 import com.biomaster.Extras.Dialog;
 import com.biomaster.Models.Practica;
@@ -21,7 +20,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Consultas extends AppCompatActivity {
 
@@ -52,6 +50,8 @@ public class Consultas extends AppCompatActivity {
                         Practica adding = new Practica();
                         adding.setID(actual.getInt("ID"));
                         adding.setNombre_Prof(actual.getString("Profesor"));
+                        adding.setGrupo(actual.getString("Grupo"));
+                        adding.setComentarios(actual.getString("Comentarios"));
                         adding.setAsist_Aux(actual.getString("Asist_Aux").equals("1"));
                         adding.setAsist_Chico_Serv(actual.getString("Asist_Serv").equals("1"));
                         adding.setPractica(actual.getString("Practica"));

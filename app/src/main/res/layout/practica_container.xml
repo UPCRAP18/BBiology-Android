@@ -12,7 +12,7 @@
         android:layout_margin="8dp"
         android:background="@drawable/round_button_white_blue"
         android:textSize="18sp"
-        tools:text="Practica: ss/ss/ss 00:00 -- 00:00" />
+        tools:text="Practica: 6IV12 ss/ss/ss 00:00 -- 00:00" />
 
     <LinearLayout
         android:id="@+id/InfoLayout"
@@ -172,6 +172,18 @@
                 android:textSize="18sp"
                 tools:text="Practica realizada: Practica 2" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtComents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="16sp"
+            tools:text="Comentarios: " />
 
     </LinearLayout>
 

@@ -60,6 +60,8 @@
         <item>20:00 - 22:00</item>
     </string-array>
     <string name="lblDia">Dia de la practica:</string>
+    <string name="lblGrupo">Grupo: </string>
+    <string name="lblComentarios">Comentarios: </string>
     <string name="lblMuestras">Muestras Fijas</string>
     <string name="lblMateriales">Materiales Completos</string>
     <string name="lblPuntualidadA">Puntualidad Asistente</string>
@@ -92,6 +94,7 @@
     <string name="btnMatAlumno">Materiales por alumno</string>
     <string name="btnMatEquipo">Materiales por equipo</string>
     <string name="btnMatLab">Materiales de laboratorio</string>
+    <string name="htGrupo">6IV12</string>
 
 
 </resources>

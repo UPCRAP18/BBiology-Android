@@ -1,9 +1,5 @@
 package com.biomaster;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,6 +17,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -46,7 +47,7 @@ public class Profesor extends AppCompatActivity {
     private User usr;
     private Spinner spHoras, spPracticas;
     private RadioGroup rgStatusPractica, rgAsistAux, rgAsistServ, rgPuntAlumno;
-    private EditText txteDate;
+    private EditText txteDate, txtGrupo, txtComentarios;
     private LinearLayout layOptions;
     private CheckBox cbPuntAsist, cbMatComp, cbMuesFij, cbManComp, cbPuntProf, cbBata;
     private Practica practica = new Practica();
@@ -92,6 +93,9 @@ public class Profesor extends AppCompatActivity {
 
         txteDate.setText(String.format(Locale.getDefault(), "%s/%s/%s", daySel, montSel, yearSel));
 
+        txtGrupo = findViewById(R.id.txtGrupo);
+        txtComentarios = findViewById(R.id.txtComentarios);
+
         configureDateEntry();
 
         txtWelcome.setText(getResources().getString(R.string.lblWelcome, usr.getNombre()));
@@ -117,22 +121,35 @@ public class Profesor extends AppCompatActivity {
         });
 
         btnAddReg.setOnClickListener(v ->{
-            bulkDataToPractica();
-            ProgressDialog pDialog = ProgressDialog.show(Profesor.this, "", "Cargando...", true);
-            pDialog.show();
+            if (bulkDataToPractica()) {
+                ProgressDialog pDialog = ProgressDialog.show(Profesor.this, "", "Cargando...", true);
+                pDialog.show();
 
-            AddPracticaRequest addPract = new AddPracticaRequest(practica, getRequestListener(pDialog));
+                AddPracticaRequest addPract = new AddPracticaRequest(practica, getRequestListener(pDialog));
 
-            RequestQueue queue = Volley.newRequestQueue(Profesor.this);
-            queue.add(addPract);
-
+                RequestQueue queue = Volley.newRequestQueue(Profesor.this);
+                queue.add(addPract);
+                //System.out.println(practica.toString());
+            }
         });
 
     }
 
-    private void bulkDataToPractica(){
+    private boolean bulkDataToPractica() {
         practica = new Practica();
         int practicaID = practSelected.getID();
+
+        if (txtGrupo.getText().toString().isEmpty()) {
+            Toast.makeText(this, "No puede dejar el grupo vacio", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (txtComentarios.getText().toString().isEmpty()) {
+            practica.setComentarios("");
+        } else {
+            practica.setComentarios(txtComentarios.getText().toString());
+        }
+
         if(rgStatusPractica.getCheckedRadioButtonId() == R.id.rdPractNo){
             rgPuntAlumno.check(R.id.rdAlumnNo);
             rgAsistAux.check(R.id.rdAuxNo);
@@ -145,6 +162,9 @@ public class Profesor extends AppCompatActivity {
             cbMuesFij.setChecked(false);
             practicaID = 0;
         }
+
+        practica.setGrupo(txtGrupo.getText().toString());
+
         practica.setID_Prof(helper.getData_Usuario().getID());
         RadioButton rdTrue = findViewById(R.id.rdAuxYes);
         practica.setAsist_Aux(rdTrue.isChecked());
@@ -164,7 +184,7 @@ public class Profesor extends AppCompatActivity {
         String[] horas = spHoras.getSelectedItem().toString().split("-");
         practica.setHora_Inicio(horas[0].trim());
         practica.setHora_Fin(horas[1].trim());
-
+        return true;
     }
 
     public void sendMatInfo(View view) {

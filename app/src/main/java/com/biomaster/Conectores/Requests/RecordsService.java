@@ -3,7 +3,6 @@ package com.biomaster.Conectores.Requests;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class RecordsService extends StringRequest {
@@ -11,8 +10,8 @@ public class RecordsService extends StringRequest {
     private Map<String,String> params;
 
     public RecordsService(Response.Listener<String> listener){
-        super(Method.POST, BASE_URL.concat("/app/index.php"), listener, null);
-        params = new HashMap<>();
+        super(Method.GET, BASE_URL.concat("/app/index.php"), listener, null);
+        //params = new HashMap<>();
     }
 
     @Override

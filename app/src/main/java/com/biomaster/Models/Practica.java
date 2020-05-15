@@ -2,7 +2,15 @@ package com.biomaster.Models;
 
 public class Practica {
     private int ID, Practica_Realizar;
-    private String ID_Prof, Fecha, Hora_Inicio, Hora_Fin, Practica, Ruta, Nombre_Prof;
+    private String ID_Prof;
+    private String Grupo;
+    private String Comentarios;
+    private String Fecha;
+    private String Hora_Inicio;
+    private String Hora_Fin;
+    private String Practica;
+    private String Ruta;
+    private String Nombre_Prof;
     private boolean
             Asist_Aux,
             Asist_Chico_Serv,
@@ -15,6 +23,22 @@ public class Practica {
             Manual;
 
     public Practica() { }
+
+    public String getGrupo() {
+        return Grupo;
+    }
+
+    public void setGrupo(String grupo) {
+        Grupo = grupo;
+    }
+
+    public String getComentarios() {
+        return Comentarios;
+    }
+
+    public void setComentarios(String comentarios) {
+        Comentarios = comentarios;
+    }
 
     public String getNombre_Prof() {
         return Nombre_Prof;
@@ -160,4 +184,29 @@ public class Practica {
         Ruta = ruta;
     }
 
+    @Override
+    public String toString() {
+        return "Practica{" +
+                "ID=" + ID +
+                ", Practica_Realizar=" + Practica_Realizar +
+                ", ID_Prof='" + ID_Prof + '\'' +
+                ", Grupo='" + Grupo + '\'' +
+                ", Comentarios='" + Comentarios + '\'' +
+                ", Fecha='" + Fecha + '\'' +
+                ", Hora_Inicio='" + Hora_Inicio + '\'' +
+                ", Hora_Fin='" + Hora_Fin + '\'' +
+                ", Practica='" + Practica + '\'' +
+                ", Ruta='" + Ruta + '\'' +
+                ", Nombre_Prof='" + Nombre_Prof + '\'' +
+                ", Asist_Aux=" + Asist_Aux +
+                ", Asist_Chico_Serv=" + Asist_Chico_Serv +
+                ", Hubo_Practica=" + Hubo_Practica +
+                ", Muestras_Fija=" + Muestras_Fija +
+                ", Bata=" + Bata +
+                ", Materiales_Completos=" + Materiales_Completos +
+                ", Puntualidad_Alumno=" + Puntualidad_Alumno +
+                ", Puntualidad_Profesor=" + Puntualidad_Profesor +
+                ", Manual=" + Manual +
+                '}';
+    }
 }
